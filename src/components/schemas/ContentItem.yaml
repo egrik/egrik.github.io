@@ -1,9 +1,10 @@
 type: object
 properties:
   id:
-    type: integer
+    type: string
+    format: uuid
     description: ID of Content item.
-    example: 15
+    example: ce53b435-b2c6-417f-9cd0-d1ea574df3af
   type:
     type: string
     enum:
@@ -31,7 +32,7 @@ properties:
     type: string
     description: Link to the preview image.
     example: https://images-na.ssl-images-amazon.com/images/I/71yMgOenT5L._AC_SX679_.jpg
-  is_public:
+  public:
     type: boolean
     description: The property that indicates whether this item is public.
     example: true
@@ -39,7 +40,7 @@ properties:
     type: string
     description: Link to share the item.
     example: link
-  is_pinned:
+  pinned:
     type: boolean
     description: Pinned items appear at the top of the list of content items.
     example: false

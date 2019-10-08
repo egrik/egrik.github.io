@@ -1,9 +1,10 @@
 type: object
 properties:
   id:
-    type: integer
+    type: string
+    format: uuid
     description: User ID
-    example: 15
+    example: 66b7c80e-1d5a-4ddc-b251-0bc7c7bd7ca0
   username:
     type: string
     description: User name
@@ -18,15 +19,11 @@ properties:
     items:
       type: object
       properties:
-        id:
-          type: integer
-          description: Language Id
-          example: 1
         code:
           type: string
           description: ISO 2 language code
           example: en
-        is_active:
+        active:
           type: boolean
           description: Indicate which language is active for the current user
           example: true

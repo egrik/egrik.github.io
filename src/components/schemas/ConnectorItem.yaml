@@ -4,7 +4,7 @@ properties:
     type: string
     description: Connector name
     example: Twitter
-  is_using:
+  using:
     type: boolean
     description: The property indicates that the current user is using the connector
     example: true

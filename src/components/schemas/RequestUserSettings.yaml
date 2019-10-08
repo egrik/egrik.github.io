@@ -9,6 +9,6 @@ properties:
     description: User email
     example: nickname@example.com
   language:
-    type: integer
-    description: Language Id for the current user
-    example: 1
+    type: string
+    description: ISO 2 language code
+    example: en
