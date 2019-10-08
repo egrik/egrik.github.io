@@ -8,8 +8,9 @@ get:
       description: ID of content item
       required: true
       schema:
-        type: integer
-        format: int32
+        type: string
+        format: uuid
+        example: ce53b435-b2c6-417f-9cd0-d1ea574df3af
   security:
     - bearerAuth: []
   responses:
@@ -28,3 +29,4 @@ get:
                     example: false
                   result:
                     $ref: ./../../components/schemas/ContentItem.yaml
+                    
