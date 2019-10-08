@@ -1,0 +1,20 @@
+X-Pagination-Current-Page:
+  description: Current page of all collection.
+  schema:
+    type: integer
+    example: 1
+X-Pagination-Page-Count:
+  description: Total page count.
+  schema:
+    type: integer
+    example: 15
+X-Pagination-Per-Page:
+  description: Count of items per page.
+  schema:
+    type: integer
+    example: 20
+X-Pagination-Total-Count:
+  description: Total count of items.
+  schema:
+    type: integer
+    example: 299

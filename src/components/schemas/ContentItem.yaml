@@ -1,0 +1,50 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: ID of Content item.
+    example: 15
+  type:
+    type: string
+    enum:
+      - link
+      - video
+    description: Type of Content item.
+    example: link
+  title:
+    type: string
+    description: Title of content item.
+    example: Apple iPhone X, Boost Mobile, 64GB
+  description:
+    type: string
+    description: Description of content item.
+    example: Renewed products work and look like new.
+  source_url:
+    type: string
+    description: URL address of the content source.
+    example: https://www.amazon.com/Apple-iPhone-Boost-Mobile-64GB/dp/B07RRYRSC7
+  source_name:
+    type: string
+    description: Content source name.
+    example: amazon.com
+  preview_image:
+    type: string
+    description: Link to the preview image.
+    example: https://images-na.ssl-images-amazon.com/images/I/71yMgOenT5L._AC_SX679_.jpg
+  is_public:
+    type: boolean
+    description: The property that indicates whether this item is public.
+    example: true
+  share_link:
+    type: string
+    description: Link to share the item.
+    example: link
+  is_pinned:
+    type: boolean
+    description: Pinned items appear at the top of the list of content items.
+    example: false
+  created_at:
+    type: string
+    description: The date the item was added to the collection.
+    format: date-time
+    example: '2019-08-27 16:43:09'

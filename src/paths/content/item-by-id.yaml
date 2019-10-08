@@ -1,0 +1,30 @@
+get:
+  tags:
+    - content
+  summary: Get information about a content item by ID
+  parameters:
+    - name: id
+      in: path
+      description: ID of content item
+      required: true
+      schema:
+        type: integer
+        format: int32
+  security:
+    - BasicAuth: []
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - $ref: ./../../responses/not-found.yaml
+      - 200:
+          description: Content item information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    $ref: ./../../components/schemas/ContentItem.yaml

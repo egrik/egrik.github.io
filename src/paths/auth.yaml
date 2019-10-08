@@ -1,0 +1,25 @@
+post:
+  tags:
+    - authenticate
+  summary: Get access token by username and password
+  security:
+    - BasicAuth: []
+  responses:
+    allOf:
+      - $ref: ./../responses/unauthorized.yaml
+      - 200:
+          description: Generated access token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    type: object
+                    properties:
+                      access_token:
+                        type: string
+                        example: dkxWLSIfcZMrYcW73014lE0uYk02ytQ-

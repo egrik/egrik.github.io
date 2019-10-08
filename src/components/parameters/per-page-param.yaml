@@ -1,0 +1,7 @@
+in: query
+name: per-page
+description: Count of items per-page
+schema:
+  type: integer
+  format: int32
+  default: 20

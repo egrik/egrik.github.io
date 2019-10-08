@@ -1,0 +1,32 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: User ID
+    example: 15
+  username:
+    type: string
+    description: User name
+    example: nickname
+  email:
+    type: string
+    description: User email
+    example: nickname@example.com
+  languages:
+    type: array
+    description: Available languages ​​for service localization
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Language Id
+          example: 1
+        code:
+          type: string
+          description: ISO 2 language code
+          example: en
+        is_active:
+          type: boolean
+          description: Indicate which language is active for the current user
+          example: true

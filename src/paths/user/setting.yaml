@@ -1,0 +1,50 @@
+get:
+  tags:
+    - user
+  summary: Get current user settings
+  security:
+    - BasicAuth: []
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - 200:
+          description: Current user settings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    allOf:
+                      - $ref: ./../../components/schemas/ResponseUserSettings.yaml
+put:
+  tags:
+    - user
+  summary: Update current user settings
+  security:
+    - BasicAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ./../../components/schemas/RequestUserSettings.yaml
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - 200:
+          description: Current user settings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    allOf:
+                      - $ref: ./../../components/schemas/ResponseUserSettings.yaml

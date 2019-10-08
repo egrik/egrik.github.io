@@ -1,0 +1,33 @@
+openapi: 3.0.0
+servers:
+  - description: Sandbox server
+    url: '/api/v1'
+info:
+  version: "1.0.0"
+  title: API documentation
+tags:
+  - name: content
+    description: Access to your personal content items
+  - name: user
+    description: Access to user personal information
+  - name: authenticate
+    description: Authentication
+paths:
+  /auth:
+    $ref: ./src/paths/auth.yaml
+  /user/setting:
+    $ref: ./src/paths/user/setting.yaml
+  /user/logout:
+    $ref: ./src/paths/user/logout.yaml
+  /item:
+    $ref: ./src/paths/content/item.yaml
+  /item/{id}:
+    $ref: ./src/paths/content/item-by-id.yaml
+  /item/pin:
+    $ref: ./src/paths/content/pin-item.yaml
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic

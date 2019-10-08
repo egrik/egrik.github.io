@@ -1,0 +1,40 @@
+get:
+  tags:
+    - content
+  summary: Get filtered content items
+  parameters:
+    - in: query
+      name: category
+      description: Category of content item. Available category options are link and video.
+      schema:
+        type: string
+        enum:
+          - link
+          - video
+        description: Type of Content item.
+        example: link
+    - $ref: ./../../components/parameters/page-param.yaml
+    - $ref: ./../../components/parameters/per-page-param.yaml
+  security:
+    - BasicAuth: []
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - $ref: ./../../responses/not-found.yaml
+      - 200:
+          description: Collection of attribute groups
+          headers:
+            allOf:
+              - $ref: ./../../responses/header-pagination.yaml
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    type: array
+                    items:
+                      $ref: ./../../components/schemas/ContentItem.yaml

@@ -1,0 +1,15 @@
+401:
+  description: Unauthorized
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            type: string
+            example: Your request was made with invalid credentials
+          errors:
+            type: boolean
+            example: true
+          code:
+            type: integer

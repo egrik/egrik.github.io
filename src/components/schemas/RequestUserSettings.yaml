@@ -1,0 +1,14 @@
+type: object
+properties:
+  username:
+    type: string
+    description: User name
+    example: nickname
+  email:
+    type: string
+    description: User email
+    example: nickname@example.com
+  language:
+    type: integer
+    description: Language Id for the current user
+    example: 1
