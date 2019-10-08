@@ -3,7 +3,7 @@ get:
     - user
   summary: Get current user settings
   security:
-    - BasicAuth: []
+    - bearerAuth: []
   responses:
     allOf:
       - $ref: ./../../responses/unauthorized.yaml
@@ -25,7 +25,7 @@ put:
     - user
   summary: Update current user settings
   security:
-    - BasicAuth: []
+    - bearerAuth: []
   requestBody:
     required: true
     content:

@@ -1,0 +1,19 @@
+get:
+  tags:
+    - connector
+  summary: Get list of connectors
+  responses:
+    '200':
+      description: Collection available connectors
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: boolean
+                example: false
+              result:
+                type: array
+                items:
+                  $ref: ./../../components/schemas/ConnectorItem.yaml

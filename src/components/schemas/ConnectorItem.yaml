@@ -1,0 +1,14 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Connector name
+    example: Twitter
+  is_using:
+    type: boolean
+    description: The property indicates that the current user is using the connector
+    example: true
+  redirect_url:
+    type: string
+    description: URL to redirect the user to connect the connector. * available only for users who hasn't connected the cnnector
+    example: https://teleboard.io/connector/twitter/auth-redirect

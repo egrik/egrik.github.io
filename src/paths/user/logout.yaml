@@ -3,7 +3,7 @@ post:
     - user
   summary: Logout the current user
   security:
-    - BasicAuth: []
+    - bearerAuth: []
   responses:
     allOf:
       - $ref: ./../../responses/unauthorized.yaml

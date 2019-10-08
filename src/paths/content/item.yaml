@@ -16,7 +16,7 @@ get:
     - $ref: ./../../components/parameters/page-param.yaml
     - $ref: ./../../components/parameters/per-page-param.yaml
   security:
-    - BasicAuth: []
+    - bearerAuth: []
   responses:
     allOf:
       - $ref: ./../../responses/unauthorized.yaml

@@ -10,11 +10,9 @@ tags:
     description: Access to your personal content items
   - name: user
     description: Access to user personal information
-  - name: authenticate
-    description: Authentication
+  - name: connector
+    description: Access to available connectors
 paths:
-  /auth:
-    $ref: ./src/paths/auth.yaml
   /user/setting:
     $ref: ./src/paths/user/setting.yaml
   /user/logout:
@@ -25,9 +23,13 @@ paths:
     $ref: ./src/paths/content/item-by-id.yaml
   /item/pin:
     $ref: ./src/paths/content/pin-item.yaml
+  /connector:
+    $ref: ./src/paths/connector/index.yaml
+  /connector/{name}:
+    $ref: ./src/paths/connector/connector-by-name.yaml
 
 components:
   securitySchemes:
-    BasicAuth:
+    bearerAuth:
       type: http
-      scheme: basic
+      scheme: bearer

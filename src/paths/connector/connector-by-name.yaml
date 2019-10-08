@@ -1,15 +1,7 @@
-get:
+delete:
   tags:
-    - content
-  summary: Get information about a content item by ID
-  parameters:
-    - name: id
-      in: path
-      description: ID of content item
-      required: true
-      schema:
-        type: integer
-        format: int32
+    - connector
+  summary: Detach the connector for current user by connector name
   security:
     - bearerAuth: []
   responses:
@@ -17,7 +9,6 @@ get:
       - $ref: ./../../responses/unauthorized.yaml
       - $ref: ./../../responses/not-found.yaml
       - 200:
-          description: Content item information
           content:
             application/json:
               schema:
@@ -26,5 +17,3 @@ get:
                   errors:
                     type: boolean
                     example: false
-                  result:
-                    $ref: ./../../components/schemas/ContentItem.yaml
