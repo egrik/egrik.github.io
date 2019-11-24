@@ -19,8 +19,8 @@ paths:
     $ref: ./src/paths/user/logout.yaml
   /item:
     $ref: ./src/paths/content/item.yaml
-  /item/{id}:
-    $ref: ./src/paths/content/item-by-id.yaml
+  /item/{hash}:
+    $ref: ./src/paths/content/item-by-hash.yaml
   /item/pin:
     $ref: ./src/paths/content/pin-item.yaml
   /connector:

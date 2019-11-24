@@ -1,16 +1,15 @@
 get:
   tags:
     - content
-  summary: Get information about a content item by ID
+  summary: Get information about a content item by unique hash
   parameters:
-    - name: id
+    - name: hash
       in: path
-      description: ID of content item
+      description: Unique hash of content item
       required: true
       schema:
         type: string
-        format: uuid
-        example: ce53b435-b2c6-417f-9cd0-d1ea574df3af
+        example: ht2gStd
   security:
     - bearerAuth: []
   responses:
@@ -29,4 +28,3 @@ get:
                     example: false
                   result:
                     $ref: ./../../components/schemas/ContentItem.yaml
-                    

@@ -1,10 +1,9 @@
 type: object
 properties:
-  id:
+  hash:
     type: string
-    format: uuid
-    description: ID of Content item.
-    example: ce53b435-b2c6-417f-9cd0-d1ea574df3af
+    description: Unique hash of Content item.
+    example: QfxjXpn
   type:
     type: string
     enum:
