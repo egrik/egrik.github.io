@@ -21,8 +21,8 @@ paths:
     $ref: ./src/paths/content/item.yaml
   /item/{hash}:
     $ref: ./src/paths/content/item-by-hash.yaml
-  /item/pin:
-    $ref: ./src/paths/content/pin-item.yaml
+  /item/{hash}/visibility:
+    $ref: ./src/paths/content/item-visibility.yaml
   /connector:
     $ref: ./src/paths/connector/index.yaml
   /connector/{name}:
