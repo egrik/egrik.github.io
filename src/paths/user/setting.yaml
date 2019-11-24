@@ -20,7 +20,7 @@ get:
                   result:
                     allOf:
                       - $ref: ./../../components/schemas/ResponseUserSettings.yaml
-put:
+patch:
   tags:
     - user
   summary: Update current user settings
