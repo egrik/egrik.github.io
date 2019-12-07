@@ -1,0 +1,38 @@
+type: object
+properties:
+  hash:
+    type: string
+    description: Unique hash of Content item.
+    example: QfxjXpn
+  category:
+    type: string
+    enum:
+      - link
+      - video
+    description: Category of Content item.
+    example: link
+  title:
+    type: string
+    description: Title of content item.
+    example: Apple iPhone X, Boost Mobile, 64GB
+  previewImage:
+    type: string
+    description: Link to the preview image.
+    example: https://images-na.ssl-images-amazon.com/images/I/71yMgOenT5L._AC_SX679_.jpg
+  public:
+    type: boolean
+    description: The property that indicates whether this item is public.
+    example: true
+  shareLink:
+    type: string
+    description: Link to share the item.
+    example: link
+  pinned:
+    type: boolean
+    description: Pinned items appear at the top of the list of content items.
+    example: false
+  createdAt:
+    type: string
+    description: The date the item was added to the collection.
+    format: date-time
+    example: '2019-08-27 16:43:09'

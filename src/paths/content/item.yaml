@@ -5,13 +5,13 @@ get:
   parameters:
     - in: query
       name: category
-      description: Category of content item. Available category options are link and video.
+      description: Category of content item. Available categories are link and video.
       schema:
         type: string
         enum:
           - link
           - video
-        description: Type of Content item.
+        description: Category of Content item.
         example: link
     - $ref: ./../../components/parameters/page-param.yaml
     - $ref: ./../../components/parameters/per-page-param.yaml
@@ -37,16 +37,37 @@ get:
                   result:
                     type: array
                     items:
-                      $ref: ./../../components/schemas/ContentItem.yaml
+                      $ref: ./../../components/schemas/ContentListItem.yaml
+                  links:
+                    type: object
+                    properties:
+                      self:
+                        type: string
+                        example: https://api.teleboard.io/content/item?category=link&page=5
+                      first:
+                        type: string
+                        example: https://api.teleboard.io/content/item?category=link&page=1
+                      prev:
+                        type: string
+                        example: https://api.teleboard.io/content/item?category=link&page=4
+                      next:
+                        type: string
+                        example: https://api.teleboard.io/item?page=6
+                      last:
+                        type: string
+                        example: https://api.teleboard.io/content/item?category=link&page=15
                   meta:
                     type: object
                     properties:
-                      links:
-                        type: object
-                        properties:
-                          prev:
-                            type: string
-                            example: https://api.teleboard.io/item?page=1
-                          next:
-                            type: string
-                            example: https://api.teleboard.io/item?page=3
+                      totalCount:
+                        type: integer
+                        example: 105
+                      pageCount:
+                        type: integer
+                        example: 15
+                      currentPage:
+                        type: integer
+                        example: 5
+                      perPage:
+                        type: integer
+                        example: 2
