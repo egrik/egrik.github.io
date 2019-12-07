@@ -25,9 +25,9 @@ patch:
             public:
               type: boolean
               example: true
-            before_item:
+            beforeItem:
               type: string
-              description: Change the sort order of content item to <before_item>
+              description: Change the sort order of content item to <beforeItem>
               example: ht2gStd
   responses:
     allOf:
