@@ -28,3 +28,51 @@ get:
                     example: false
                   result:
                     $ref: ./../../components/schemas/ContentItem.yaml
+
+patch:
+  tags:
+    - content
+  summary: Update visibility settings (like public/unpublic, pin/unpin, changin sort order), for a content item
+  parameters:
+    - name: hash
+      in: path
+      description: Unique hash of content item
+      required: true
+      schema:
+        type: string
+        example: ht2gStd
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            pinned:
+              type: boolean
+              example: false
+            public:
+              type: boolean
+              example: true
+            beforeItem:
+              type: string
+              description: Change the sort order of content item to <beforeItem>
+              example: ht2gStd
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - $ref: ./../../responses/not-found.yaml
+      - 200:
+          description: Content item information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    $ref: ./../../components/schemas/ContentItem.yaml
