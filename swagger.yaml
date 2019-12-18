@@ -15,6 +15,8 @@ tags:
 paths:
   /user/setting:
     $ref: ./src/paths/user/setting.yaml
+  /user/check_session:
+    $ref: ./src/paths/user/check_session.yaml
   /user/logout:
     $ref: ./src/paths/user/logout.yaml
   /item:

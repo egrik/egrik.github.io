@@ -1,0 +1,6 @@
+type: object
+properties:
+  sessionId:
+    type: string
+    description: Session ID
+    example: qMMRk7pR3DqnYMVd

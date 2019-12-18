@@ -4,10 +4,22 @@ properties:
     type: string
     description: User name
     example: nickname
+  avatar:
+    type: string
+    description: User avatar url
+    example: https://cdn.teleboard.io/images/23/yLUMyHkUQfrD.jpg"
   email:
     type: string
     description: User email
     example: nickname@example.com
+  refCode:
+    type: string
+    description: User referal code
+    example: 5m411
+  refUrl:
+    type: string
+    description: User referal url link
+    example: https://teleboard.io/app?r=5m411"
   languages:
     type: array
     description: Available languages ​​for service localization

@@ -1,0 +1,35 @@
+post:
+  tags:
+    - user
+  summary: Check user session
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ./../../components/schemas/RequestUserCheckingSession.yaml
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - $ref: ./../../responses/not-found.yaml
+      - 200:
+          description: Current user settings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                        description: Bearer authentication token
+                        example: tdrCVBYynx8c8nUk9htdQTgAAnDtWQHu
+                      user:
+                        $ref: ./../../components/schemas/ResponseUserSettings.yaml
