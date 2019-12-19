@@ -1,21 +1,21 @@
-post:
+get:
   tags:
     - user
-  summary: Check user session
+  summary: Redirect session information
+  parameters:
+    - name: sessionId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: WHTitFR35dofsOAKjw5xo0W3M7PxlDJ
   security:
     - bearerAuth: []
-  requestBody:
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: ./../../components/schemas/RequestUserCheckingSession.yaml
   responses:
     allOf:
       - $ref: ./../../responses/unauthorized.yaml
       - $ref: ./../../responses/not-found.yaml
       - 200:
-          description: Current user settings
           content:
             application/json:
               schema:

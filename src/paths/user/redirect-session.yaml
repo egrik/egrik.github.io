@@ -1,0 +1,46 @@
+post:
+  tags:
+    - user
+  summary: Create redirect session
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - callbackUrl
+          properties:
+            callbackUrl:
+              type: string
+              description: Callback url for the app
+              example: exp://teleboardio
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - 200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    type: object
+                    properties:
+                      callbackUrl:
+                        type: string
+                        description: Callback url for the app
+                        example: exp://teleboardio
+                      sessionId:
+                        type: string
+                        description: Session id
+                        example: WHTitFR35dofsOAKjw5xo0W3M7PxlDJ
+                      hash:
+                        type: string
+                        description: Session hash
+                        example: Qd

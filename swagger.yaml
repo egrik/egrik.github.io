@@ -15,8 +15,10 @@ tags:
 paths:
   /user/setting:
     $ref: ./src/paths/user/setting.yaml
-  /user/check_session:
-    $ref: ./src/paths/user/check_session.yaml
+  /user/redirect-session/{sessionId}:
+    $ref: ./src/paths/user/redirect-session-by-sessionid.yaml
+  /user/redirect-session:
+    $ref: ./src/paths/user/redirect-session.yaml
   /user/logout:
     $ref: ./src/paths/user/logout.yaml
   /item:
