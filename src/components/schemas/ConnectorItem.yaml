@@ -1,10 +1,14 @@
 type: object
 properties:
-  name:
+  id:
     type: string
-    description: Connector name
+    description: Connector id
+    example: twitter
+  title:
+    type: string
+    description: Connector title
     example: Twitter
-  using:
+  active:
     type: boolean
     description: The property indicates that the current user is using the connector
     example: true
