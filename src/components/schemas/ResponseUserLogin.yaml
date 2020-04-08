@@ -1,0 +1,8 @@
+type: object
+properties:
+  token:
+    type: string
+    description: Bearer authentication token
+    example: tdrCVBYynx8c8nUk9htdQTgAAnDtWQHu
+  user:
+    $ref: ./../../components/schemas/ResponseUserSettings.yaml

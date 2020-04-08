@@ -1,0 +1,75 @@
+post:
+  tags:
+    - auth-postback
+  summary: Login/Register through Apple
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+#  {
+#    "identityToken": "eyJraWQiOiI4NkQ4OEtmIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJodHRwczovL2FwcGxlaWQuYXBwbGUuY29tIiwiYXVkIjoiaW8udGVsZWJvYXJkIiwiZXhwIjoxNTgzMDcwNjUxLCJpYXQiOjE1ODMwNzAwNTEsInN1YiI6IjAwMTU3OC4yNjE2YzE5MzI5ZjU0NmRiYWE1OWMzODM1NjVkZGUwMi4xOTUxIiwiY19oYXNoIjoiOWlqWl9UcEJlbWkyV29ReTNuTFdHQSIsImVtYWlsIjoiZXZnZW55LmdyaWtAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOiJ0cnVlIiwiYXV0aF90aW1lIjoxNTgzMDcwMDUxLCJub25jZV9zdXBwb3J0ZWQiOnRydWV9.OtBchPJetAbVRtH4UYLExGL4zWs7_0omow6ojhRFoRJi37TrvsKLRE7VvCZG7u4G2F0uH5kbWwELYt-K9G7AIFUSBWccL-L4QI2496WsvZri1DmGRVOFaXtaatWdw5C7n37qU9wibGAjUfZELtXMGviV0q0bDqIfAcFhitKSfdO11uWjR1DKklXD4ylBKhpxyre3gJdnyXVjgQfbc-Bomwtz0591IvmVAOZboY063a7IkAD3iD9znqpT5oXz9LzYeEAj9M0xMvr_OYQOPXZ0w2I6wolShE_rYYhLkHnzbcllJ5jK7WX9TurLm-hGqt8kNkOmy_rIOlEM0eEd5c93ZQ",
+#    "email": "evgeny.grik@gmail.com",
+#    "user": "001578.2616c19329f546dbaa59c383565dde02.1951",
+#    "realUserStatus": 1,
+#    "authorizationCode": "c117f0cb95b904ef8952db3ea54d19000.0.nrvxy.huJUHboN6Q-M823L8UMmag",
+#    "fullName": {
+#      "namePrefix": null,
+#      "givenName": "Евгений",
+#      "familyName": "Грик",
+#      "nickname": null,
+#      "middleName": null,
+#      "nameSuffix": null
+#    },
+#    "state": null
+#  }
+            identityToken:
+              type: string
+              example: ya29.Il_AB2fxvTfhIEghCDv1x6EcU6uwdMXJejFSH74sAUdlziK94o8h6PANFbAdqvDlzW12KMCpDxU1VM60SvdFfk9Hm6tOc-VS9fwvuKwyxW0ig2i57MUae-OCghweHKNDJQ
+            email:
+              type: string
+              example: evgeny.grik@gmail.com
+            realUserStatus:
+              type: integer
+              example: 1
+            authorizationCode:
+              type: string
+              example: c117f0cb95b904ef8952db3ea54d19000
+            user:
+              type: object
+              properties:
+                namePrefix:
+                  type: string
+                  example: Mr
+                givenName:
+                  type: string
+                  example: Evengey
+                familyName:
+                  type: string
+                  example: Smirnov
+                nickname:
+                  type: string
+                  example: esmirnov
+                middleName:
+                  type: string
+                  example: Sergeevich
+                nameSuffix:
+                  type: string
+            state:
+              type: string
+  responses:
+    allOf:
+      - 200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    allOf:
+                      - $ref: ./../../components/schemas/ResponseUserLogin.yaml

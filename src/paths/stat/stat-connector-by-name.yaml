@@ -1,0 +1,22 @@
+get:
+  tags:
+    - stat
+  summary: Get statistic by connector name
+  security:
+    - bearerAuth: []
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - $ref: ./../../responses/not-found.yaml
+      - 200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    type: integer
+                    example: 34

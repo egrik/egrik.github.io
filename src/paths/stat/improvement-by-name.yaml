@@ -1,0 +1,21 @@
+delete:
+  tags:
+    - improvement
+  summary: Delete the improvement request by name
+  security:
+    - bearerAuth: []
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - 200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    type: boolean
+                    example: true

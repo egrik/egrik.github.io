@@ -1,0 +1,27 @@
+get:
+  tags:
+    - stat
+  summary: Get statistic by content category
+  security:
+    - bearerAuth: []
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - 200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    type: object
+                    properties:
+                      link:
+                        type: integer
+                        example: 9213
+                      video:
+                        type: integer
+                        example: 234

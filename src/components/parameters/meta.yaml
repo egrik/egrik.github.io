@@ -1,0 +1,14 @@
+type: object
+properties:
+  totalCount:
+    type: integer
+    example: 105
+  pageCount:
+    type: integer
+    example: 15
+  currentPage:
+    type: integer
+    example: 5
+  perPage:
+    type: integer
+    example: 2

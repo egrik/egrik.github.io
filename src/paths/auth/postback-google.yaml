@@ -1,0 +1,58 @@
+post:
+  tags:
+    - auth-postback
+  summary: Login/Register through Google
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            type:
+              type: string
+              example: success
+            emaccessTokenail:
+              type: string
+              example: ya29.Il_AB2fxvTfhIEghCDv1x6EcU6uwdMXJejFSH74sAUdlziK94o8h6PANFbAdqvDlzW12KMCpDxU1VM60SvdFfk9Hm6tOc-VS9fwvuKwyxW0ig2i57MUae-OCghweHKNDJQ
+            idToken:
+              type: string
+              example: eyJhbGciOiJSUzI1NiIsImtpZCI6IjE3ZDU1ZmY0ZTEwOTkxZDZiMGVmZDM5MmI5MWEzM2U1NGMwZTIxOGIiLCJ0eXAiOiJKV1QifQ
+            refreshToken:
+              type: string
+              example: 1//0eef_baRZyLUNCgYIARAAGA4SNgF-L9Irqi8n42Ye2VWM5B1QP_mZO9_i7SiFAaGxXnig_yInrirZs_Pp83WuF6AXXleUslAmkQ
+            user:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: 107541860682279298231
+                name:
+                  type: string
+                  example: StableApps Dev
+                givenName:
+                  type: string
+                  example: StableApps
+                familyName:
+                  type: string
+                  example: Dev
+                photoUrl:
+                  type: string
+                  example: https://lh3.googleusercontent.com/a-/AOh14Gj5nh1aUNdfOe8m005-Xk9X04mXVdEm57LwnJM
+                email:
+                  type: string
+                  example: stableapps.dev@gmail.com
+  responses:
+    allOf:
+      - 200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    allOf:
+                      - $ref: ./../../components/schemas/ResponseUserLogin.yaml

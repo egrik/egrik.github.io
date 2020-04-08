@@ -1,0 +1,17 @@
+type: object
+properties:
+  self:
+    type: string
+    example: https://api.teleboard.io/content/item?category=link&page=5
+  first:
+    type: string
+    example: https://api.teleboard.io/content/item?category=link&page=1
+  prev:
+    type: string
+    example: https://api.teleboard.io/content/item?category=link&page=4
+  next:
+    type: string
+    example: https://api.teleboard.io/item?page=6
+  last:
+    type: string
+    example: https://api.teleboard.io/content/item?category=link&page=15

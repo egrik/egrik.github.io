@@ -1,0 +1,52 @@
+get:
+  tags:
+    - improvement
+  summary: Get current user requested improvements
+  security:
+    - bearerAuth: []
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - 200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    type: array
+                    items:
+                      $ref: ./../../components/schemas/ResponseUserImprovement.yaml
+                  links:
+                    $ref: ./../../components/parameters/links.yaml
+                  meta:
+                    $ref: ./../../components/parameters/meta.yaml
+post:
+  tags:
+    - improvement
+  summary: Request improvement
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ./../../components/schemas/ResponseUserImprovement.yaml
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - 200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    $ref: ./../../components/schemas/ResponseUserImprovement.yaml
