@@ -11,6 +11,13 @@ properties:
       - video
     description: Category of Content item.
     example: link
+  connectorId:
+    type: string
+    enum:
+      - telegram
+      - twitter
+      - youtube
+    example: telegram
   title:
     type: string
     description: Title of content item.
@@ -19,14 +26,18 @@ properties:
     type: string
     description: Link to the preview image.
     example: https://images-na.ssl-images-amazon.com/images/I/71yMgOenT5L._AC_SX679_.jpg
+  sourceUrl:
+    type: string
+    description: Link to source of the content item
+    example: https://www.youtube.com/embed/NcqZpQ65UuU
+  shareLink:
+    type: string
+    description: Link to share the item.
+    example: https://www.google.com/search?q=share%20link&hash=X3xdPgYMWMlo
   public:
     type: boolean
     description: The property that indicates whether this item is public.
     example: true
-  shareLink:
-    type: string
-    description: Link to share the item.
-    example: link
   pinned:
     type: boolean
     description: Pinned items appear at the top of the list of content items.

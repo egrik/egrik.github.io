@@ -27,6 +27,13 @@ get:
                   result:
                     type: object
                     properties:
+                      status:
+                        type: string
+                        enum:
+                          - success
+                          - fail
+                          - pending
+                        example: success
                       token:
                         type: string
                         description: Bearer authentication token

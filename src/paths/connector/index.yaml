@@ -17,3 +17,7 @@ get:
                 type: array
                 items:
                   $ref: ./../../components/schemas/ConnectorItem.yaml
+              links:
+                $ref: ./../../components/parameters/links.yaml
+              meta:
+                $ref: ./../../components/parameters/meta.yaml

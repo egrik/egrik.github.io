@@ -30,6 +30,10 @@ properties:
           type: string
           description: ISO 2 language code
           example: en
+        title:
+          type: string
+          description: Language name
+          example: English
         active:
           type: boolean
           description: Indicate which language is active for the current user

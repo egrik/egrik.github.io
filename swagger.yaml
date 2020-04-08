@@ -29,6 +29,20 @@ paths:
     $ref: ./src/paths/connector/index.yaml
   /connector/{name}:
     $ref: ./src/paths/connector/connector-by-name.yaml
+  /stat/category:
+    $ref: ./src/paths/stat/stat-category.yaml
+  /stat/connector:
+    $ref: ./src/paths/stat/stat-connector.yaml
+  /stat/connector/{name}:
+    $ref: ./src/paths/stat/stat-connector-by-name.yaml
+  /stat/improvement:
+    $ref: ./src/paths/stat/improvement.yaml
+  /stat/improvement/{name}:
+    $ref: ./src/paths/stat/improvement-by-name.yaml
+  /auth/postback-google:
+    $ref: ./src/paths/auth/postback-google.yaml
+  /auth/postback-apple:
+    $ref: ./src/paths/auth/postback-apple.yaml
 
 components:
   securitySchemes:

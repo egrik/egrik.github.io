@@ -39,35 +39,6 @@ get:
                     items:
                       $ref: ./../../components/schemas/ContentListItem.yaml
                   links:
-                    type: object
-                    properties:
-                      self:
-                        type: string
-                        example: https://api.teleboard.io/content/item?category=link&page=5
-                      first:
-                        type: string
-                        example: https://api.teleboard.io/content/item?category=link&page=1
-                      prev:
-                        type: string
-                        example: https://api.teleboard.io/content/item?category=link&page=4
-                      next:
-                        type: string
-                        example: https://api.teleboard.io/item?page=6
-                      last:
-                        type: string
-                        example: https://api.teleboard.io/content/item?category=link&page=15
+                    $ref: ./../../components/parameters/links.yaml
                   meta:
-                    type: object
-                    properties:
-                      totalCount:
-                        type: integer
-                        example: 105
-                      pageCount:
-                        type: integer
-                        example: 15
-                      currentPage:
-                        type: integer
-                        example: 5
-                      perPage:
-                        type: integer
-                        example: 2
+                    $ref: ./../../components/parameters/meta.yaml
