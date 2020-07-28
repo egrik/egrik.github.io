@@ -12,6 +12,16 @@ post:
           - share
   security:
     - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            url:
+              type: string
+              example: https://teleboard.io/
   responses:
     allOf:
       - $ref: ./../../responses/unauthorized.yaml
