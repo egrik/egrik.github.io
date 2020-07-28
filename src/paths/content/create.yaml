@@ -1,0 +1,29 @@
+post:
+  tags:
+    - content
+  summary: Create a content item
+  parameters:
+    - in: path
+      name: connectorId
+      required: true
+      schema:
+        type: string
+        enum:
+          - share
+  security:
+    - bearerAuth: []
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - 200:
+          description: Content item information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    $ref: ./../../components/schemas/ContentItem.yaml

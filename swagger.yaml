@@ -23,6 +23,8 @@ paths:
     $ref: ./src/paths/user/logout.yaml
   /item:
     $ref: ./src/paths/content/item.yaml
+  /item/{connectorId}:
+    $ref: ./src/paths/content/create.yaml
   /item/{hash}:
     $ref: ./src/paths/content/item-by-hash.yaml
   /connector:
