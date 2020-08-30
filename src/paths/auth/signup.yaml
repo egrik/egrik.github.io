@@ -1,0 +1,42 @@
+post:
+  tags:
+    - auth
+  summary: Signup using email and password
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            language:
+              type: string
+              example: en
+              enum:
+                - ru
+                - en
+                - uk
+            password:
+              type: string
+              format: password
+              example: secret
+            username:
+              type: string
+              example: tester
+            email:
+              type: string
+              example: info@teleboard.io
+  responses:
+    allOf:
+      - 200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    allOf:
+                      - $ref: ./../../components/schemas/ResponseUserLogin.yaml

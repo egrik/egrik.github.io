@@ -45,6 +45,12 @@ paths:
     $ref: ./src/paths/auth/postback-google.yaml
   /auth/postback-apple:
     $ref: ./src/paths/auth/postback-apple.yaml
+  /auth/signup:
+    $ref: src/paths/auth/signup.yaml
+  /auth/login:
+    $ref: src/paths/auth/login.yaml
+  /auth/reset-password:
+    $ref: src/paths/auth/reset-password.yaml
 
 components:
   securitySchemes:
