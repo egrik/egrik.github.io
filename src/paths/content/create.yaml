@@ -8,8 +8,10 @@ post:
       required: true
       schema:
         type: string
+        example: share
         enum:
           - share
+          - clipboard
   security:
     - bearerAuth: []
   requestBody:
