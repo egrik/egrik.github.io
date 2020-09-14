@@ -29,6 +29,8 @@ paths:
     $ref: ./src/paths/content/item-by-hash.yaml
   /connector:
     $ref: ./src/paths/connector/index.yaml
+  /preview:
+    $ref: src/paths/content/preview.yaml
   /connector/{name}:
     $ref: ./src/paths/connector/connector-by-name.yaml
   /stat/category:

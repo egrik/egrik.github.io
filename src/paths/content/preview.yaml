@@ -1,0 +1,30 @@
+post:
+  tags:
+    - content
+  summary: Preview a content item
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            url:
+              type: string
+              example: https://teleboard.io/
+  responses:
+    allOf:
+      - $ref: ./../../responses/unauthorized.yaml
+      - 200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: boolean
+                    example: false
+                  result:
+                    $ref: ../../components/schemas/PreviewContent.yaml

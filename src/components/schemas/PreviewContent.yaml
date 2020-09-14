@@ -1,0 +1,18 @@
+type: object
+properties:
+  title:
+    type: string
+    description: Title of content item.
+    example: Apple iPhone X, Boost Mobile, 64GB
+  description:
+    type: string
+    description: Description of content item.
+    example: Renewed products work and look like new.
+  image:
+    type: string
+    description: Link to the preview image.
+    example: https://images-na.ssl-images-amazon.com/images/I/71yMgOenT5L._AC_SX679_.jpg
+  sourceName:
+    type: string
+    description: Content source name.
+    example: YouTube
