@@ -12,6 +12,9 @@ properties:
     type: string
     description: User email
     example: nickname@example.com
+  nativeImportClipboard:
+    type: boolean
+    example: true
   refCode:
     type: string
     description: User referal code

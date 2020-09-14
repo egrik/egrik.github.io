@@ -12,3 +12,6 @@ properties:
     type: string
     description: ISO 2 language code
     example: en
+  nativeImportClipboard:
+    type: boolean
+    example: true
