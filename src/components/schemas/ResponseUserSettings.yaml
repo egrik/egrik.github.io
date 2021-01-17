@@ -22,7 +22,11 @@ properties:
   refUrl:
     type: string
     description: User referal url link
-    example: https://teleboard.io/app?r=5m411"
+    example: https://app.teleboard.io/r/5m411
+  publicBoardUrl:
+    type: string
+    description: User's public board url link
+    example: https://app.teleboard.io/super
   languages:
     type: array
     description: Available languages ​​for service localization
